@@ -1,15 +1,15 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/Zarco/zarco-round-200x200.png" alt="Zarco Logo" width="150" />
+  <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png" alt="zar Logo" width="150" />
 
-  # Zarco
+  # zar
 
   **The Ultimate Discord Bot**
   
   *Evolve Your Community.*
 
-  [![Invite](https://img.shields.io/badge/Invite-Zarco-00dbc5?style=for-the-badge&logo=discord&logoColor=black)](https://discord.com/oauth2/authorize?client_id=1345820519827636295)
+  [![Invite](https://img.shields.io/badge/Invite-zar-00dbc5?style=for-the-badge&logo=discord&logoColor=black)](https://discord.com/oauth2/authorize?client_id=1345820519827636295)
   [![Support](https://img.shields.io/badge/Support-Server-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/6YVmxA4Qsf)
-  [![Website](https://img.shields.io/badge/Website-Live-success?style=for-the-badge)](https://zarscape.github.io/zarco)
+  [![Website](https://img.shields.io/badge/Website-Live-success?style=for-the-badge)](https://zarscape.github.io/zar)
 
 </div>
 
@@ -17,13 +17,13 @@
 
 ## 🚀 About
 
-**Zarco** is the definitive multi-purpose Discord application designed for elite servers. It combines high-end moderation, advanced utilities, and powerful engagement tools into a single, seamless experience.
+**zar** is the definitive multi-purpose Discord application designed for elite servers. It combines high-end moderation, advanced utilities, and powerful engagement tools into a single, seamless experience.
 
-Trusted by **300+ servers** and **140,000+ users**, Zarco provides the infrastructure you need to build and scale a world-class community.
+Trusted by **300+ servers** and **140,000+ users**, zar provides the infrastructure you need to build and scale a world-class community.
 
 ## 📦 Modules
 
-Zarco comes packed with everything you need, built right in:
+zar comes packed with everything you need, built right in:
 
 ### 🛡️ Moderation & Security
 - **Auditlogs:** Track every action within your server with precision.
@@ -51,15 +51,15 @@ Zarco comes packed with everything you need, built right in:
 
 ## 🔗 Links
 
-- **Website:** [zarscape.github.io/zarco](https://zarscape.github.io/zarco)
-- **Invite Zarco:** [Add to Discord](https://discord.com/oauth2/authorize?client_id=1345820519827636295)
-- **Support Server:** [Zarco HQ](https://discord.gg/6YVmxA4Qsf)
-- **Partners:** [View Partners](https://zarscape.github.io/zarco/partners.html)
+- **Website:** [zarscape.github.io/zar](https://zarscape.github.io/zar)
+- **Invite zar:** [Add to Discord](https://discord.com/oauth2/authorize?client_id=1345820519827636295)
+- **Support Server:** [zar HQ](https://discord.gg/6YVmxA4Qsf)
+- **Partners:** [View Partners](https://zarscape.github.io/zar/partners.html)
 
 ## ⚖️ Legal
 
-- [Terms of Service](https://zarscape.github.io/zarco/tos.html)
-- [Privacy Policy](https://zarscape.github.io/zarco/privacy.html)
+- [Terms of Service](https://zarscape.github.io/zar/tos.html)
+- [Privacy Policy](https://zarscape.github.io/zar/privacy.html)
 
 ##  Author
 
@@ -68,5 +68,5 @@ Developed with ❤️ by **@ZarScape**.
 ---
 
 <div align="center">
-  <sub>&copy; 2026 Zarco App. All Rights Reserved.</sub>
+  <sub>&copy; 2026 zar App. All Rights Reserved.</sub>
 </div>
