@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | zar</title>
+    <meta name="description" content="Page not found. Play Snake while you are here.">
+    <meta name="theme-color" content="#00dbc5">
+    <link rel="icon" href="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/404Style.css">
+</head>
+<body class="selection:bg-[#00dbc5]/30">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+                <nav class="mb-8 focus-hidden">
+            <a href="index.html" class="back-home-btn">
+                <span class="back-home-icon" aria-hidden="true"><-</span>
+                <span>Back to Home</span>
+            </a>
+        </nav>
+
+        <section class="text-center max-w-3xl mx-auto mb-8 md:mb-10 focus-hidden">
+            <p class="text-xs uppercase tracking-[0.28em] text-gray-500 font-bold mb-3">Page Not Found</p>
+            <h1 class="text-5xl md:text-7xl font-black text-accent leading-none">404</h1>
+            <p class="text-gray-300 mt-4 text-base md:text-lg">This page does not exist, but your high score can.</p>
+        </section>
+
+        <section class="game-shell max-w-4xl mx-auto">
+            <button id="exit-focus" class="focus-exit" aria-label="Exit fullscreen game">x</button>
+            <header class="game-top">
+                <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+                <div class="stat"><span>Best</span><strong id="best">0</strong></div>
+                <div class="stat"><span>Speed</span><strong id="speed">1.0x</strong></div>
+            </header>
+
+            <div class="canvas-wrap">
+                <canvas id="snake-canvas" width="720" height="720" aria-label="Snake game board"></canvas>
+                <div class="overlay hidden" id="overlay">
+                    <h2 id="overlay-title">Paused</h2>
+                    <p id="overlay-text">Press Space to continue.</p>
+                    <button id="overlay-btn" class="game-btn">Resume</button>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button id="start-btn" class="game-btn">Start / Restart</button>
+                <button id="pause-btn" class="game-btn alt">Pause</button>
+            </div>
+
+            <div class="tips">
+                <p><strong>Desktop:</strong> Arrow Keys / WASD, <kbd>Space</kbd> to pause.</p>
+                <p><strong>Mobile:</strong> Swipe on the board.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/404Script.js"></script>
+</body>
+</html>

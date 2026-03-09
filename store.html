@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | zar</title>
+    <meta name="description" content="Choose a zar package: Bronze, Silver, Gold, or Diamond.">
+    <meta name="theme-color" content="#00dbc5">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Store | zar">
+    <meta property="og:description" content="Choose the best zar package for your Discord server.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-wallpaper.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Store | zar">
+    <meta property="twitter:description" content="Choose the best zar package for your Discord server.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-wallpaper.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/storeStyle.css">
+</head>
+<body class="selection:bg-[#00dbc5]/30">
+    <div id="human-check" class="verify-modal hidden" role="dialog" aria-modal="true" aria-labelledby="verify-title">
+        <div class="verify-card">
+            <h2 id="verify-title">Verify You Are Human</h2>
+            <p class="verify-subtitle">Press and hold to continue to the store.</p>
+            <button id="hold-verify-btn" class="hold-btn" type="button" aria-label="Click and hold to verify">
+                <span class="hold-progress" id="hold-progress"></span>
+                <span class="hold-label" id="hold-label">Click & Hold to Verify</span>
+            </button>
+            <p class="verify-hint">Keep holding until verification completes.</p>
+        </div>
+    </div>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-anim opacity-20"
+             style="background: radial-gradient(circle, var(--accent) 0%, transparent 70%); filter: blur(90px); animation-duration: 28s;"></div>
+        <div class="absolute bottom-[-15%] right-[-10%] w-[55vw] h-[55vw] rounded-full bg-anim opacity-20"
+             style="background: radial-gradient(circle, var(--accent) 0%, transparent 70%); filter: blur(90px); animation-duration: 34s; animation-delay: -8s;"></div>
+    </div>
+    <div id="cursor"></div>
+        <nav class="p-6 md:p-10">
+        <a href="index.html" class="back-home-btn">
+            <span class="back-home-icon" aria-hidden="true"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+            <span>Back to Home</span>
+        </a>
+    </nav>
+
+    <main class="container mx-auto px-6 pb-20">
+        <header class="text-center mb-14">
+            <p class="text-[11px] uppercase tracking-[0.25em] text-gray-500 font-bold mb-4">Premium Packages</p>
+            <h1 class="text-4xl md:text-6xl font-black text-accent mb-4">zar store</h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto">Professional plans designed for growth. Pick your tier and scale your server with confidence.</p>
+        </header>
+        <section class="packages-grid" id="packages">
+            <article class="package-card" data-tier="bronze" tabindex="0">
+                <div class="package-media">
+                    <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/bronze.png" alt="Bronze package" class="no-copy-media" draggable="false">
+                </div>
+                <div class="package-top">
+                    <p class="package-tier">Bronze</p>
+                    <span class="package-pill">Starter</span>
+                </div>
+                <p class="package-duration">1 Month</p>
+                <p class="package-price">$2.99</p>
+                <p class="package-value"><strong>Quick Start:</strong> A simple monthly plan to get started fast.</p>
+                <p class="package-savings"><span>For 1 month</span></p>
+                <a href="#" class="package-btn disabled-payment" aria-disabled="true">Payments Unavailable</a>
+            </article>
+            <article class="package-card" data-tier="silver" tabindex="0">
+                <div class="package-media">
+                    <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/silver.png" alt="Silver package" class="no-copy-media" draggable="false">
+                </div>
+                <div class="package-top">
+                    <p class="package-tier">Silver</p>
+                    <span class="package-pill">Most Common</span>
+                </div>
+                <p class="package-duration">6 Months</p>
+                <p class="package-price">$13.97</p>
+                <p class="package-value"><strong>Steady Growth:</strong> Great for growing communities that want better long-term value.</p>
+                <p class="package-savings"><span>22% Off</span></p>
+                <a href="#" class="package-btn disabled-payment" aria-disabled="true">Payments Unavailable</a>
+            </article>
+            <article class="package-card featured" data-tier="gold" tabindex="0">
+                <div class="package-media">
+                    <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/gold.png" alt="Gold package" class="no-copy-media" draggable="false">
+                </div>
+                <div class="package-top">
+                    <p class="package-tier">Gold</p>
+                    <span class="package-pill">Annual</span>
+                </div>
+                <p class="package-duration">1 Year</p>
+                <p class="package-price">$17.99</p>
+                <p class="package-value"><strong>Best Annual Value:</strong> More time, lower effective monthly cost, and premium savings.</p>
+                <p class="package-savings"><span>50% Off</span></p>
+                <a href="#" class="package-btn disabled-payment" aria-disabled="true">Payments Unavailable</a>
+            </article>
+            <article class="package-card" data-tier="diamond" tabindex="0">
+                <div class="package-media">
+                    <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/diamond.png" alt="Diamond package" class="no-copy-media" draggable="false">
+                </div>
+                <div class="package-top">
+                    <p class="package-tier">Diamond</p>
+                    <span class="package-pill">Lifetime</span>
+                </div>
+                <p class="package-duration">Lifetime</p>
+                <p class="package-price">$44.97</p>
+                <p class="package-value"><strong>Lifetime Access:</strong> One payment for permanent access and maximum convenience.</p>
+                <p class="package-savings"><span>Ultimate Value</span></p>
+                <a href="#" class="package-btn disabled-payment" aria-disabled="true">Payments Unavailable</a>
+            </article>
+        </section>
+        <div id="payment-warning" class="notice-modal hidden" role="dialog" aria-modal="true" aria-labelledby="payment-warning-title">
+            <div class="notice-card">
+                <h3 id="payment-warning-title">Payments Are Temporarily Unavailable</h3>
+                <p>Payments are currently unavailable. They will return in the next major zar update. Thank you for your patience and support.</p>
+                <button id="payment-warning-close" class="package-btn">Understood</button>
+            </div>
+        </div>
+        <footer class="mt-12 pt-10 border-t border-white/10 text-center">
+            <p class="text-gray-600 text-[10px] font-black uppercase tracking-[0.3em]">&copy; <span id="current-year"></span> zar APP. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </main>
+    <script src="assets/js/storeScript.js"></script>
+</body>
+</html>

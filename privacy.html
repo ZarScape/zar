@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | zar</title>
-    <meta name="description" content="zar Privacy Policy. Learn how we handle your data with care and security.">
+    <title>privacy policy | zar</title>
+    <meta name="description" content="zar privacy policy. learn how we handle your data with care and security.">
     <meta name="keywords" content="zar, Privacy Policy, Data, Security, Discord Bot">
     <meta name="author" content="ZarScape">
     <meta name="theme-color" content="#00dbc5">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Privacy Policy | zar">
-    <meta property="og:description" content="zar Privacy Policy. Learn how we handle your data with care and security.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
+    <meta property="og:title" content="privacy policy | zar">
+    <meta property="og:description" content="zar privacy policy. learn how we handle your data with care and security.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-wallpaper.png">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Privacy Policy | zar">
-    <meta property="twitter:description" content="zar Privacy Policy. Learn how we handle your data with care and security.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
+    <meta property="twitter:title" content="privacy policy | zar">
+    <meta property="twitter:description" content="zar privacy policy. learn how we handle your data with care and security.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-wallpaper.png">
 
     <link rel="icon" href="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/privacyStyle.css">
@@ -36,14 +36,15 @@
     <div id="cursor"></div>
 
     <nav class="p-6 md:p-10">
-        <a href="index.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-accent transition-colors font-medium">
-            <i data-lucide="arrow-left" class="w-5 h-5"></i> Back to Home
+        <a href="index.html" class="back-home-btn">
+            <span class="back-home-icon" aria-hidden="true"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+            <span>Back to Home</span>
         </a>
     </nav>
 
     <main class="container mx-auto px-6 pb-20 max-w-4xl">
         <h1 class="text-4xl md:text-6xl font-black mb-4 text-accent">Privacy Policy</h1>
-        <p class="text-gray-500 font-bold tracking-widest text-xs uppercase mb-16">Last Updated On: March 8, 2026</p>
+        <p class="text-gray-500 font-bold tracking-widest text-xs uppercase mb-16">Last Updated On: March 9, 2026</p>
 
         <div class="space-y-12">
             <section>
@@ -57,22 +58,23 @@
                     <li><strong class="text-white">Discord IDs</strong> (User, Server, Channel) to enable bot functionality (e.g., giveaways, embeds, PVCs).</li>
                     <li><strong class="text-white">Temporary Session Data</strong> (e.g., giveaway participants, embed drafts) stored locally and purged immediately after use.</li>
                     <li><strong class="text-white">Configuration IDs</strong> (e.g., role IDs for autorole, channel IDs for audit logs) stored only for as long as the feature is enabled.</li>
+                    <li><strong class="text-white">Payment Email Address</strong> collected during checkout to verify payment status and confirm order processing.</li>
                 </ul>
             </section>
 
             <section>
                 <h3 class="text-2xl font-bold text-white mb-4">Payment Data</h3>
-                <p class="text-gray-400 leading-relaxed">Payments are processed by third-party providers. We do not store or collect your credit card details on our servers. We only receive confirmation of payment and limited details (such as your email and Discord ID) required to fulfill your premium subscription.</p>
+                <p class="text-gray-400 leading-relaxed">Payments are processed by our online reseller and Merchant of Record, Polar. Polar handles payment processing, order-related inquiries, and returns. We do not store or collect your credit card details on our servers. We only receive limited payment confirmation details (such as your email and Discord ID) required to verify payment and process your order.</p>
             </section>
 
             <section>
                 <h3 class="text-2xl font-bold text-white mb-4">No Message Content Storage</h3>
-                <p class="text-gray-400 leading-relaxed">We do not retain any user messages. Modmail DMs, giveaway interactions, embed inputs, and utility command inputs are processed in real-time and immediately discarded.</p>
+                <p class="text-gray-400 leading-relaxed">We do not retain any user messages. Modmail DMs, utility command inputs, and similar interactions are processed in real-time and immediately discarded. We may collect temporary data such as embed configuration and giveaway state so buttons and related functions can work correctly, but this data is deleted immediately after use.</p>
             </section>
 
             <section>
                 <h3 class="text-2xl font-bold text-white mb-4">No External Databases</h3>
-                <p class="text-gray-400 leading-relaxed">All data is stored securely on our own servers in JSON files or local databases. We never use third-party or cloud databases.</p>
+                <p class="text-gray-400 leading-relaxed">All database data is hosted on our own cloud database servers. We do not provide your data to any third party.</p>
             </section>
 
             <section>
@@ -86,8 +88,18 @@
             </section>
 
             <section>
+                <h3 class="text-2xl font-bold text-white mb-4">Data Retention Periods</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-400 ml-2">
+                    <li><strong class="text-white">Real-time interaction data</strong> (e.g., utility inputs, modmail processing content) is discarded immediately after processing.</li>
+                    <li><strong class="text-white">Temporary feature data</strong> (e.g., giveaway state, embed configuration state) is stored only as long as required for the feature to function and deleted immediately after use or completion.</li>
+                    <li><strong class="text-white">Persistent configuration data</strong> (e.g., role/channel IDs) is retained only while the related feature is enabled and removed when no longer required.</li>
+                    <li><strong class="text-white">Payment verification data</strong> is retained only for order verification, premium activation, and compliance needs.</li>
+                </ul>
+            </section>
+
+            <section>
                 <h3 class="text-2xl font-bold text-white mb-4">Data Sharing</h3>
-                <p class="text-gray-400 leading-relaxed">We do not sell, trade, or rent any personal data. We do not share your data with third parties except for the purpose of payment processing, or when legally required to comply with valid legal processes.</p>
+                <p class="text-gray-400 leading-relaxed">We do not sell, trade, or rent any personal data. We do not share your data with third parties, except when legally required to comply with valid legal processes.</p>
             </section>
 
             <section>
@@ -102,7 +114,7 @@
 
             <section>
                 <h3 class="text-2xl font-bold text-white mb-4">Your Rights</h3>
-                <p class="text-gray-400 leading-relaxed">Depending on your jurisdiction, you can request access to or deletion of your data by contacting us via zar HQ.</p>
+                <p class="text-gray-400 leading-relaxed">Depending on your jurisdiction, you can request access to or deletion of your data by contacting us via Zar HQ.</p>
             </section>
 
             <section>
@@ -112,7 +124,7 @@
 
             <section>
                 <h3 class="text-2xl font-bold text-white mb-4">Contact Us</h3>
-                <p class="text-gray-400 leading-relaxed">For any privacy inquiries, please reach out in our support server: <a href="https://discord.gg/6YVmxA4Qsf" target="_blank" class="text-accent hover:underline">zar HQ</a>.</p>
+                <p class="text-gray-400 leading-relaxed">For any privacy inquiries, contact our founder, <strong class="text-white">Muhammad Abuzar</strong> at <a href="mailto:ZarScape@hotmail.com" class="text-accent hover:underline">ZarScape@hotmail.com</a>, or reach out in our support server: <a href="https://discord.gg/6YVmxA4Qsf" target="_blank" class="text-accent hover:underline">Zar HQ</a>.</p>
             </section>
         </div>
 

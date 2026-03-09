@@ -53,7 +53,7 @@ zar comes packed with everything you need, built right in:
 
 - **Website:** [zarscape.github.io/zar](https://zarscape.github.io/zar)
 - **Invite zar:** [Add to Discord](https://discord.com/oauth2/authorize?client_id=1345820519827636295)
-- **Support Server:** [zar HQ](https://discord.gg/6YVmxA4Qsf)
+- **Support Server:** [Zar HQ](https://discord.gg/6YVmxA4Qsf)
 - **Partners:** [View Partners](https://zarscape.github.io/zar/partners.html)
 
 ## ⚖️ Legal

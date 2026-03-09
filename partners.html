@@ -13,16 +13,16 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Partners | zar">
     <meta property="og:description" content="Discover zar's partners. Elite bots and communities powering the Discord ecosystem.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-wallpaper.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Partners | zar">
     <meta property="twitter:description" content="Discover zar's partners. Elite bots and communities powering the Discord ecosystem.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-wallpaper.png">
 
     <link rel="icon" href="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/partnersStyle.css">
@@ -39,18 +39,19 @@
     <div id="cursor"></div>
 
     <nav class="p-6 md:p-10">
-        <a href="index.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-accent transition-colors font-medium">
-            <i data-lucide="arrow-left" class="w-5 h-5"></i> Back to Home
+        <a href="index.html" class="back-home-btn">
+            <span class="back-home-icon" aria-hidden="true"><i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+            <span>Back to Home</span>
         </a>
     </nav>
 
     <main class="container mx-auto px-6 pb-20">
         <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-6xl font-black mb-4 text-accent">Our Partners</h1>
+            <h1 class="text-4xl md:text-6xl font-black mb-4 text-accent">Our Bot Partners</h1>
             <p class="text-gray-400 max-w-2xl mx-auto text-lg">Discover the elite bots and communities that power the Discord ecosystem alongside zar.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="partners-grid">
             <!-- Lyxious -->
             <div class="glass p-8 rounded-3xl border-white/5 hover:border-accent/30 transition-all group relative overflow-hidden flex flex-col">
                 <div class="flex items-center gap-4 mb-6">
@@ -85,43 +86,6 @@
                 <div class="grid grid-cols-2 gap-3 mt-auto">
                     <a href="https://discord.com/oauth2/authorize?client_id=938803094291116082" target="_blank" class="col-span-2 py-3 rounded-xl bg-accent text-black font-bold text-center hover:opacity-90 transition-opacity">Invite Bot</a>
                     <a href="https://discord.gg/pZbC5zJSCN" target="_blank" class="col-span-2 py-3 rounded-xl glass border-white/10 font-bold text-center hover:bg-white/5 transition-colors">Support Server</a>
-                </div>
-            </div>
-
-            <!-- WavyBot -->
-            <div class="glass p-8 rounded-3xl border-white/5 hover:border-accent/30 transition-all group relative overflow-hidden flex flex-col">
-                <div class="flex items-center gap-4 mb-6">
-                    <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zarPartners/WavyBot.png" alt="WavyBot" class="w-16 h-16 rounded-2xl object-cover shadow-lg bg-white/5">
-                    <div>
-                        <h3 class="text-2xl font-black">WavyBot</h3>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">@imle64cy</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-8">
-                    <span class="px-3 py-1 rounded-full bg-white/5 text-[10px] font-bold uppercase tracking-widest text-accent border border-white/5">Multipurpose</span>
-                </div>
-                <div class="grid grid-cols-2 gap-3 mt-auto">
-                    <a href="https://discord.com/oauth2/authorize?client_id=1209275204497571920" target="_blank" class="col-span-2 py-3 rounded-xl bg-accent text-black font-bold text-center hover:opacity-90 transition-opacity">Invite Bot</a>
-                    <a href="https://discord.gg/p6exNaQXCD" target="_blank" class="py-3 rounded-xl glass border-white/10 font-bold text-center hover:bg-white/5 transition-colors">Support</a>
-                    <a href="https://le64cy-dev.github.io/" target="_blank" class="py-3 rounded-xl glass border-white/10 font-bold text-center hover:bg-white/5 transition-colors">Website</a>
-                </div>
-            </div>
-
-            <!-- Spike -->
-            <div class="glass p-8 rounded-3xl border-white/5 hover:border-accent/30 transition-all group relative overflow-hidden flex flex-col">
-                <div class="flex items-center gap-4 mb-6">
-                    <img src="https://github.com/ZarScape/ZarScape/blob/main/images/zarPartners/Spike.png?raw=true" alt="Spike" class="w-16 h-16 rounded-2xl object-cover shadow-lg bg-white/5">
-                    <div>
-                        <h3 class="text-2xl font-black">Spike</h3>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">@h9r5</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-8">
-                    <span class="px-3 py-1 rounded-full bg-white/5 text-[10px] font-bold uppercase tracking-widest text-accent border border-white/5">Multipurpose</span>
-                </div>
-                <div class="grid grid-cols-2 gap-3 mt-auto">
-                    <a href="https://discord.com/oauth2/authorize?client_id=1371575195877507124" target="_blank" class="col-span-2 py-3 rounded-xl bg-accent text-black font-bold text-center hover:opacity-90 transition-opacity">Invite Bot</a>
-                    <a href="https://discord.gg/HM2gE5f52b" target="_blank" class="col-span-2 py-3 rounded-xl glass border-white/10 font-bold text-center hover:bg-white/5 transition-colors">Support Server</a>
                 </div>
             </div>
 
@@ -162,6 +126,33 @@
                 </div>
             </div>
         </div>
+
+        <section class="mt-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-black mb-3 text-accent">Other Partners</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Other amazing partners who support our services.</p>
+            </div>
+
+            <div class="partners-grid">
+                <!-- BrickHosting -->
+                <div class="glass p-8 rounded-3xl border-white/5 hover:border-accent/30 transition-all group relative overflow-hidden flex flex-col">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zarPartners/BrickHosting.png" alt="BrickHosting.org" class="w-16 h-16 rounded-2xl object-cover shadow-lg bg-white/5">
+                        <div>
+                            <h3 class="text-2xl font-black">BrickHosting.org</h3>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">@deputyryan32</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-3 py-1 rounded-full bg-white/5 text-[10px] font-bold uppercase tracking-widest text-accent border border-white/5">Hosting</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <a href="https://account.brickhosting.org/register?ref=Wx332ozG" target="_blank" class="col-span-2 py-3 rounded-xl bg-accent text-black font-bold text-center hover:opacity-90 transition-opacity">Register</a>
+                        <a href="https://discord.gg/e2h92FX4p9" target="_blank" class="col-span-2 py-3 rounded-xl glass border-white/10 font-bold text-center hover:bg-white/5 transition-colors">Support Server</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer class="mt-20 pt-10 border-t border-white/10 text-center">
             <p class="text-gray-600 text-[10px] font-black uppercase tracking-[0.3em]">&copy; <span id="current-year"></span> zar APP. ALL RIGHTS RESERVED.</p>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success | zar</title>
+    <meta name="description" content="Your payment was received and your order is being processed.">
+    <meta name="theme-color" content="#00dbc5">
+    <link rel="icon" href="https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/zar-round-200x200.png">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/successorderStyle.css">
+</head>
+<body class="selection:bg-[#00dbc5]/30 min-h-screen">
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+
+    <main class="container mx-auto px-6 page-shell">
+        <div class="card max-w-3xl mx-auto rounded-3xl p-7 md:p-10">
+            <p class="text-[11px] uppercase tracking-[0.25em] text-gray-500 font-bold mb-4">Order Update</p>
+            <h1 class="text-3xl md:text-5xl font-black text-[#00dbc5] mb-5">Payment Received Successfully</h1>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+                If you were redirected to this page after payment, your order has been received and is now being processed.
+            </p>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+                To verify the latest status, please check the email address you entered during checkout.
+            </p>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
+                Thank you for choosing our services. If you need help or have any questions, join our support server.
+            </p>
+
+            <div class="countdown-box px-4 py-4 mb-6">
+                <p class="text-sm md:text-base text-gray-300">
+                    Redirecting you to our Discord support server in
+                    <span id="countdown" class="font-black text-[#00dbc5]">10</span>
+                    seconds...
+                </p>
+            </div>
+
+            <div class="action-row">
+                <a href="https://discord.gg/6YVmxA4Qsf" class="action-btn primary">Join Support Server</a>
+                <a href="index.html" class="action-btn secondary">Back to Home</a>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/successorderScript.js"></script>
+</body>
+</html>

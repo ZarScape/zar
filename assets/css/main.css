@@ -11,6 +11,14 @@ body {
 *, *::before, *::after {
     cursor: none !important;
 }
+@media (hover: none), (pointer: coarse) {
+    *, *::before, *::after {
+        cursor: auto !important;
+    }
+    #cursor {
+        display: none !important;
+    }
+}
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
