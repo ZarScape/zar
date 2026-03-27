@@ -37,8 +37,7 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
     });
 });
 
-// Navbar scroll effect
-/*
+// Navbar scroll effect*
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
@@ -47,7 +46,7 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('nav-scrolled');
     }
 });
-*/
+
 
 // Custom Cursor Logic
 const cursor = document.getElementById('cursor');

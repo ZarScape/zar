@@ -53,36 +53,36 @@
             </div>
 
             <div class="hidden md:flex items-center gap-6 flex-1 justify-center px-6">
-                <a href="#features" class="text-sm font-medium text-gray-400 hover:text-accent transition-colors">Modules</a>
-                <a href="#reviews" class="text-sm font-medium text-gray-400 hover:text-accent transition-colors">Reviews</a>
-                <a href="#stats" class="text-sm font-medium text-gray-400 hover:text-accent transition-colors">Stats</a>
-                <a href="store.html" class="text-sm font-medium text-gray-400 hover:text-accent transition-colors">Store</a>
-                <a href="partners.html" class="text-sm font-medium text-gray-400 hover:text-accent transition-colors">Partners</a>
+                <a href="#features" class="nav-btn text-sm font-medium text-gray-400">Modules</a>
+                <a href="#reviews" class="nav-btn text-sm font-medium text-gray-400">Reviews</a>
+                <a href="#stats" class="nav-btn text-sm font-medium text-gray-400">Stats</a>
+                <a href="store.html" class="nav-btn text-sm font-medium text-gray-400">Store</a>
+                <a href="partners.html" class="nav-btn text-sm font-medium text-gray-400">Partners</a>
             </div>
 
             <div class="hidden md:flex items-center gap-3 ml-auto">
-                    <a href="https://discord.gg/6YVmxA4Qsf" target="_blank" class="px-6 py-2 rounded-full glass border-white/20 hover:border-accent hover:text-accent transition-all text-sm font-semibold">
+                    <a href="https://discord.gg/6YVmxA4Qsf" target="_blank" class="nav-btn px-6 py-2 rounded-full glass border-white/20 text-sm font-semibold">
                         Support
                     </a>
-                    <a href="https://discord.com/oauth2/authorize?client_id=1345820519827636295" target="_blank" class="px-6 py-2 rounded-full bg-accent text-black font-bold hover:opacity-90 transition-all shadow-accent">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1345820519827636295" target="_blank" class="nav-btn nav-btn-primary px-6 py-2 rounded-full bg-accent text-black font-bold shadow-accent">
                         Add to Discord
                     </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-white">
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-white nav-btn nav-icon-btn">
                 <i data-lucide="menu" id="menu-icon"></i>
             </button>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-4 glass rounded-3xl border border-white/10 py-8 px-6 flex flex-col gap-6 animate-in slide-in-from-top shadow-2xl">
-            <a href="#features" class="text-xl font-medium">Modules</a>
-            <a href="#reviews" class="text-xl font-medium">Reviews</a>
-            <a href="#stats" class="text-xl font-medium">Stats</a>
-            <a href="store.html" class="text-xl font-medium">Store</a>
-            <a href="partners.html" class="text-xl font-medium">Partners</a>
+            <a href="#features" class="text-xl font-medium nav-btn">Modules</a>
+            <a href="#reviews" class="text-xl font-medium nav-btn">Reviews</a>
+            <a href="#stats" class="text-xl font-medium nav-btn">Stats</a>
+            <a href="store.html" class="text-xl font-medium nav-btn">Store</a>
+            <a href="partners.html" class="text-xl font-medium nav-btn">Partners</a>
             <div class="flex flex-col gap-4 mt-4">
-                <a href="https://discord.com/oauth2/authorize?client_id=1345820519827636295" target="_blank" class="w-full py-4 rounded-2xl bg-accent text-black font-bold text-lg text-center">Add to Discord</a>
-                <a href="https://discord.gg/6YVmxA4Qsf" target="_blank" class="w-full py-4 rounded-2xl glass border-white/10 font-bold text-center">Join Support</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1345820519827636295" target="_blank" class="w-full py-4 rounded-2xl bg-accent text-black font-bold text-lg text-center nav-btn nav-btn-primary">Add to Discord</a>
+                <a href="https://discord.gg/6YVmxA4Qsf" target="_blank" class="w-full py-4 rounded-2xl glass border-white/10 font-bold text-center nav-btn">Join Support</a>
             </div>
         </div>
     </nav>
@@ -124,8 +124,8 @@
     <!-- Features Section -->
     <section id="features" class="py-20 md:py-32 relative border-t border-white/5">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                <div class="max-w-xl">
+            <div class="flex flex-col md:flex-row justify-center items-end mb-20 gap-8">
+                <div class="max-w-xl mx-auto text-center">
                     <h2 class="text-accent text-sm font-black tracking-widest uppercase mb-4">Elite Modules</h2>
                     <p class="text-5xl font-black leading-tight">Everything built-in. <br />Inside zar</p>
                 </div>
@@ -482,23 +482,23 @@
     <section id="stats" class="py-20 md:py-32">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="group p-12 glass rounded-[3rem] text-center border-white/5 relative overflow-hidden">
-                    <div class="absolute -right-8 -top-8 text-accent/5 group-hover:text-accent/10 transition-colors">
-                        <i data-lucide="server" class="w-32 h-32"></i>
+                <div class="group p-12 glass rounded-[3rem] text-center border-white/5 relative overflow-hidden stat-card">
+                    <div class="stat-icon-chip">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </div>
-                    <h4 class="text-6xl font-black text-accent mb-3">310+</h4>
+                    <h4 class="text-6xl font-black text-accent mb-3">359+</h4>
                     <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">Servers Secured</p>
                 </div>
-                <div class="group p-12 glass rounded-[3rem] text-center border-white/5 relative overflow-hidden">
-                    <div class="absolute -right-8 -top-8 text-accent/5 group-hover:text-accent/10 transition-colors">
-                        <i data-lucide="users" class="w-32 h-32"></i>
+                <div class="group p-12 glass rounded-[3rem] text-center border-white/5 relative overflow-hidden stat-card">
+                    <div class="stat-icon-chip">
+                        <i data-lucide="users" class="w-5 h-5"></i>
                     </div>
-                    <h4 class="text-6xl font-black text-accent mb-3">135K+</h4>
+                    <h4 class="text-6xl font-black text-accent mb-3">136K+</h4>
                     <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">Active Users</p>
                 </div>
-                <div class="group p-12 glass rounded-[3rem] text-center border-white/5 relative overflow-hidden">
-                    <div class="absolute -right-8 -top-8 text-accent/5 group-hover:text-accent/10 transition-colors">
-                        <i data-lucide="activity" class="w-32 h-32"></i>
+                <div class="group p-12 glass rounded-[3rem] text-center border-white/5 relative overflow-hidden stat-card">
+                    <div class="stat-icon-chip">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
                     </div>
                     <h4 class="text-6xl font-black text-accent mb-3">99.99%</h4>
                     <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">Uptime Guaranteed</p>
