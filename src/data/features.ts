@@ -1,0 +1,18 @@
+export const features = [
+  { icon: 'clipboard-list', title: 'Auditlogs', description: 'Track every action within your server.' },
+  { icon: 'user-plus', title: 'Autorole', description: 'Automatically assign roles to new members.' },
+  { icon: 'binary', title: 'Counting', description: 'Engage members with counting channels.' },
+  { icon: 'layout-template', title: 'Custom Embeds', description: 'Create beautiful custom embeds easily.' },
+  { icon: 'smile-plus', title: 'Emoji', description: 'Manage and steal emojis for your server.' },
+  { icon: 'gamepad-2', title: 'Games', description: 'Fun mini-games to keep chat active.' },
+  { icon: 'gift', title: 'Giveaway', description: 'Host and manage giveaways seamlessly.' },
+  { icon: 'hand', title: 'Greetings', description: 'Customizable welcome and goodbye messages.' },
+  { icon: 'info', title: 'Info', description: 'Display server and user information.' },
+  { icon: 'file-text', title: 'Logs', description: 'Keep a record of server events.' },
+  { icon: 'shield-alert', title: 'Moderation', description: 'Powerful tools to moderate your server.' },
+  { icon: 'mic', title: 'PVC', description: 'Private Voice Channels for members.' },
+  { icon: 'crown', title: 'Premium', description: 'Unlock exclusive features and limits.' },
+  { icon: 'bell', title: 'Reminder', description: 'Set reminders for important tasks.' },
+  { icon: 'user-cog', title: 'Role', description: 'Manage roles and permissions easily.' },
+  { icon: 'wrench', title: 'Utility', description: 'Essential utilities for server management.' },
+];
