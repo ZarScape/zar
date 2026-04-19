@@ -133,7 +133,7 @@ const Navbar = () => {
           href="https://discord.gg/6YVmxA4Qsf"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-btn px-6 py-2 rounded-full glass-light border-white/20 text-sm font-semibold text-white"
+          className="nav-btn px-5 py-2 rounded-full glass-light border-white/20 text-xs font-bold text-white whitespace-nowrap"
         >
           Support
         </a>
@@ -141,7 +141,7 @@ const Navbar = () => {
           href="https://discord.com/oauth2/authorize?client_id=1345820519827636295"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-btn nav-btn-primary px-6 py-2 rounded-full bg-accent text-black font-bold shadow-accent"
+          className="nav-btn nav-btn-primary px-6 py-2.5 rounded-full bg-accent text-black font-black text-xs shadow-accent whitespace-nowrap uppercase tracking-wider"
         >
           Add to Discord
         </a>

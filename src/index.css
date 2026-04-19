@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../index.html";
+@source "./**/*.{ts,tsx}";
 
 
 :root {
@@ -166,11 +168,11 @@ body {
 .nav-link-active::after {
     content: '';
     position: absolute;
-    bottom: 4px;
+    bottom: -6px;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     background-color: var(--accent);
     border-radius: 50%;
     box-shadow: 0 0 8px var(--accent);
