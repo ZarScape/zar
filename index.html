@@ -7,6 +7,29 @@
     <title>zar | your ultimate discord bot</title>
     <meta name="description" content="Your Ultimate Discord Companion. Always by Your Side. A multipurpose app packed with everything you need to enhance your server" />
     <meta name="theme-color" content="#00dbc5" />
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into a correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which will cause the window to load the correct route in the SPA.
+      (function(l) {
+        if (l.search[1] === 'p' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&') 
+          }).filter(function(s) {
+            return s.slice(0, 2) === 'p='
+          })[0].slice(2);
+          if (decoded !== l.pathname) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + (l.search ? '' : '') + l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
   </head>
   <body>
     <div id="root"></div>

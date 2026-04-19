@@ -62,13 +62,13 @@ const Navbar = () => {
   const handleNavClick = (path: string) => {
     if (path.startsWith('#')) {
       const id = path.substring(1);
-      if (location.pathname === '/') {
+      if (location.pathname === '/' || location.pathname === '/zar' || location.pathname === '/zar/') {
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       } else {
-        window.location.href = `/#/#${id}`;
+        window.location.href = `/zar/#${id}`;
       }
     }
   };
