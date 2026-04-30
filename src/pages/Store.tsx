@@ -51,7 +51,7 @@ const packages = [
 ];
 
 const Store = () => {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('yearly');
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
   const [showNotification, setShowNotification] = useState(false);
   const [showPaymentNotice, setShowPaymentNotice] = useState(false);
 
