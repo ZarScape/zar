@@ -164,10 +164,10 @@ const Store = () => {
         )}
       </main>
       {/* Support Server Notification */}
-      <div className={`fixed bottom-8 right-8 z-[120] transition-all duration-500 transform ${
+      <div className={`fixed bottom-6 left-6 right-6 md:left-auto md:bottom-8 md:right-8 z-[120] transition-all duration-500 transform ${
         showNotification ? 'translate-y-0 opacity-100 animate-wobble' : 'translate-y-12 opacity-0 pointer-events-none'
       }`}>
-        <div className="glass p-5 pr-12 rounded-2xl border-accent/20 shadow-2xl shadow-black/50 max-w-sm relative group">
+        <div className="glass p-5 pr-12 rounded-2xl border-accent/20 shadow-2xl shadow-black/50 max-w-sm mx-auto md:mx-0 relative group !backdrop-blur-[32px]">
           <button 
             onClick={() => setShowNotification(false)}
             className="absolute top-3 right-3 text-gray-500 hover:text-white transition-colors"
