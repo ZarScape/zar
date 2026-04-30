@@ -1,8 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleNavClick = (id: string) => {
     if (location.pathname === '/') {
@@ -11,7 +12,7 @@ const Footer = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      window.location.href = `/#/#${id}`;
+      navigate(`/#${id}`);
     }
   };
 

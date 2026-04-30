@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +47,19 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, [location.pathname]);
 
+  // Handle scrolling to hash on home page
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const id = location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.pathname, location.hash]);
+
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -61,14 +75,14 @@ const Navbar = () => {
 
   const handleNavClick = (path: string) => {
     if (path.startsWith('#')) {
-      const id = path.substring(1);
-      if (location.pathname === '/' || location.pathname === '/zar' || location.pathname === '/zar/') {
+      if (location.pathname === '/') {
+        const id = path.substring(1);
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       } else {
-        window.location.href = `/zar/#${id}`;
+        navigate(`/${path}`);
       }
     }
   };

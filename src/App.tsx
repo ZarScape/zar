@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Cursor from './components/Cursor'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -13,7 +12,6 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <Router basename="/zar" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Cursor />
       <div className="relative min-h-screen">
         <Navbar />
         <Routes>

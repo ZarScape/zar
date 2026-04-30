@@ -1,46 +1,49 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import BackgroundOrbs from '../components/BackgroundOrbs';
 import BackHomeBtn from '../components/BackHomeBtn';
+import { Bell, X } from 'lucide-react';
 import { GlowCard } from '../components/ui/spotlight-card';
+import BillingToggle from '../components/ui/BillingToggle';
 
 const packages = [
   {
     tier: 'Bronze',
-    badge: 'Starter',
-    duration: '1 Month',
-    price: '$2.99',
-    value: 'Quick Start: A simple monthly plan to get started fast.',
-    savings: 'For 1 month',
+    badge: 'Entry',
+    monthlyPrice: '$3.99',
+    yearlyPrice: '$25.97',
+    value: 'Quick Start: A simple plan to get started fast with essential elite features.',
+    savings: 'SAVE $21/year',
     img: 'https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/bronze.png',
     color: 'theme' as const,
   },
   {
     tier: 'Silver',
-    badge: 'Most Common',
-    duration: '6 Months',
-    price: '$13.97',
-    value: 'Steady Growth: Great for growing communities that want better long-term value.',
-    savings: '22% Off',
+    badge: 'Popular',
+    monthlyPrice: '$8.99',
+    yearlyPrice: '$54.97',
+    value: 'Steady Growth: Great for growing communities that want better long-term performance.',
+    savings: 'SAVE $52/year',
     img: 'https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/silver.png',
     color: 'theme' as const,
   },
   {
     tier: 'Gold',
-    badge: 'Annual',
-    duration: '1 Year',
-    price: '$17.99',
-    value: 'Best Annual Value: More time, lower effective monthly cost, and premium savings.',
-    savings: '50% Off',
+    badge: 'Best Value',
+    monthlyPrice: '$12.99',
+    yearlyPrice: '$64.97',
+    value: 'Maximum Power: Complete access to all advanced modules and community scaling tools.',
+    savings: 'SAVE $90/year',
     img: 'https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/gold.png',
-    featured: true,
     color: 'theme' as const,
   },
   {
     tier: 'Diamond',
     badge: 'Lifetime',
-    duration: 'Lifetime',
-    price: '$44.97',
-    value: 'Lifetime Access: One payment for permanent access and maximum convenience.',
+    monthlyPrice: '$49.97',
+    yearlyPrice: '$49.97',
+    isLifetime: true,
+    featured: true,
+    value: 'Everything in Gold but permanent. One-time payment for maximum convenience.',
     savings: 'Ultimate Value',
     img: 'https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/diamond.png',
     color: 'theme' as const,
@@ -48,48 +51,23 @@ const packages = [
 ];
 
 const Store = () => {
-  const [isVerified, setIsVerified] = useState(false);
-  const [isHolding, setIsHolding] = useState(false);
-  const [holdProgress, setHoldProgress] = useState(0);
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('yearly');
+  const [showNotification, setShowNotification] = useState(false);
   const [showPaymentNotice, setShowPaymentNotice] = useState(false);
-  const holdStartRef = useRef<number | null>(null);
-  const rafRef = useRef<number | null>(null);
-  const HOLD_DURATION = 1500;
 
   useEffect(() => {
-    const verified = sessionStorage.getItem('zar_store_verified');
-    if (verified) setIsVerified(true);
+    const timer = setTimeout(() => {
+      setShowNotification(true);
+      // Use BASE_URL to handle /zar/ prefix automatically
+      const soundPath = `${import.meta.env.BASE_URL}sounds/notification.mp3`.replace('//', '/');
+      const audio = new Audio(soundPath);
+      audio.volume = 0.4;
+      audio.play().catch(err => {
+        console.warn("Audio autoplay blocked or file not found:", err);
+      });
+    }, 3000);
+    return () => clearTimeout(timer);
   }, []);
-
-  const startHold = (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault();
-    if (isVerified) return;
-    setIsHolding(true);
-    holdStartRef.current = performance.now();
-    
-    const animate = () => {
-      if (holdStartRef.current === null) return;
-      const elapsed = performance.now() - holdStartRef.current;
-      const ratio = Math.min(1, elapsed / HOLD_DURATION);
-      setHoldProgress(ratio * 100);
-
-      if (ratio >= 1) {
-        setIsVerified(true);
-        setIsHolding(false);
-        sessionStorage.setItem('zar_store_verified', 'true');
-        return;
-      }
-      rafRef.current = requestAnimationFrame(animate);
-    };
-    rafRef.current = requestAnimationFrame(animate);
-  };
-
-  const stopHold = () => {
-    setIsHolding(false);
-    setHoldProgress(0);
-    holdStartRef.current = null;
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-  };
 
   const handleCardClick = () => {
     setShowPaymentNotice(true);
@@ -98,45 +76,20 @@ const Store = () => {
   return (
     <div className="min-h-screen pt-32 pb-20 relative">
       <BackgroundOrbs />
-      
-      {!isVerified && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/80 backdrop-blur-md">
-          <div className="verify-card glass p-8 max-w-md w-full text-center rounded-[2rem] border-accent/30 shadow-2xl shadow-accent/20">
-            <h2 className="text-2xl font-black text-accent mb-2">Verify You Are Human</h2>
-            <p className="text-gray-400 mb-8">Press and hold to continue to the store.</p>
-            
-            <button
-              onMouseDown={startHold}
-              onMouseUp={stopHold}
-              onMouseLeave={stopHold}
-              onTouchStart={startHold}
-              onTouchEnd={stopHold}
-              className="hold-btn relative w-full h-16 bg-white/5 border border-white/10 rounded-2xl overflow-hidden group transition-all"
-            >
-              <div 
-                className="absolute inset-0 bg-accent transition-all duration-75"
-                style={{ width: `${holdProgress}%` }}
-              />
-              <span className="relative z-10 font-bold text-white uppercase tracking-wider group-hover:scale-105 transition-transform">
-                {isHolding ? 'Keep Holding...' : 'Hold to Verify'}
-              </span>
-            </button>
-            <p className="mt-4 text-xs text-gray-500 italic">Security verification required for store access.</p>
-          </div>
-        </div>
-      )}
 
-      <main className={`container mx-auto px-6 ${!isVerified ? 'blur-lg' : ''} transition-all duration-500`}>
+      <main className="container mx-auto px-6 transition-all duration-500">
         <div className="mb-12">
             <BackHomeBtn />
         </div>
 
-        <header className="text-center mb-20">
+        <header className="text-center mb-12">
           <p className="text-[11px] uppercase tracking-[0.25em] text-gray-500 font-bold mb-4">Premium Packages</p>
           <h1 className="text-6xl font-black text-accent mb-6">zar store</h1>
-          <p className="text-gray-400 text-xl max-w-3xl mx-auto">
+          <p className="text-gray-400 text-xl max-w-3xl mx-auto mb-12">
             Professional plans designed for growth. Pick your tier and scale your server with confidence.
           </p>
+
+          <BillingToggle cycle={billingCycle} onChange={setBillingCycle} />
         </header>
 
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
@@ -154,21 +107,36 @@ const Store = () => {
                 </div>
                 
                 <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-black text-white">{pkg.tier}</h3>
-                  <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">
+                  <h3 className={`text-2xl font-black ${pkg.isLifetime ? 'text-accent' : 'text-white'}`}>{pkg.tier}</h3>
+                  <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border transition-all ${
+                    pkg.isLifetime 
+                      ? 'bg-accent text-black border-accent shadow-[0_0_15px_rgba(0,219,197,0.5)]' 
+                      : 'bg-white/5 border-white/10 text-gray-400'
+                  }`}>
                     {pkg.badge}
                   </span>
                 </div>
                 
                 <div>
-                  <p className="text-gray-500 font-bold text-sm mb-1">{pkg.duration}</p>
-                  <p className="text-4xl font-black text-white">{pkg.price}</p>
+                  <p className={`font-bold text-sm mb-1 ${pkg.isLifetime ? 'text-accent/60' : 'text-gray-500'}`}>
+                    {pkg.isLifetime ? 'One-time Payment' : (billingCycle === 'monthly' ? '1 Month' : '1 Year')}
+                  </p>
+                  <div className="flex items-end gap-2">
+                    <p className={`text-4xl font-black transition-all ${pkg.isLifetime ? 'text-accent drop-shadow-[0_0_10px_rgba(0,219,197,0.3)] scale-110 origin-left' : 'text-white'}`}>
+                        {billingCycle === 'monthly' ? pkg.monthlyPrice : pkg.yearlyPrice}
+                    </p>
+                    {!pkg.isLifetime && (
+                        <span className="text-gray-500 font-bold mb-1">/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
+                    )}
+                  </div>
                 </div>
                 
                 <p className="text-gray-400 text-sm leading-relaxed flex-grow">{pkg.value}</p>
                 
                 <div className="pt-4 mt-auto border-t border-white/5 flex flex-col gap-4">
-                  <p className="text-xs font-bold text-accent uppercase tracking-widest">{pkg.savings}</p>
+                  <p className="text-xs font-bold text-accent uppercase tracking-widest">
+                    {billingCycle === 'yearly' ? pkg.savings : (pkg.isLifetime ? 'Ultimate Value' : 'Standard Rate')}
+                  </p>
                   <button className="w-full py-4 rounded-xl bg-accent text-black font-black uppercase tracking-widest text-sm shadow-accent btn-hover">
                       Purchase Plan
                   </button>
@@ -195,6 +163,39 @@ const Store = () => {
           </div>
         )}
       </main>
+      {/* Support Server Notification */}
+      <div className={`fixed bottom-8 right-8 z-[120] transition-all duration-500 transform ${
+        showNotification ? 'translate-y-0 opacity-100 animate-wobble' : 'translate-y-12 opacity-0 pointer-events-none'
+      }`}>
+        <div className="glass p-5 pr-12 rounded-2xl border-accent/20 shadow-2xl shadow-black/50 max-w-sm relative group">
+          <button 
+            onClick={() => setShowNotification(false)}
+            className="absolute top-3 right-3 text-gray-500 hover:text-white transition-colors"
+          >
+            <X size={16} />
+          </button>
+          
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+              <Bell className="text-accent" size={20} />
+            </div>
+            <div>
+              <h4 className="text-white font-bold text-sm mb-1">Special Offer!</h4>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Join our support server for <span className="text-accent font-bold">better discount codes</span> and exclusive community rewards.
+              </p>
+              <a 
+                href="https://discord.gg/zarscape" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block mt-3 text-[10px] font-black uppercase tracking-widest text-accent hover:underline"
+              >
+                Join Discord →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

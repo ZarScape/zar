@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@source "../index.html";
-@source "./**/*.{ts,tsx}";
 
 
 :root {
@@ -15,40 +13,7 @@ body {
     margin: 0;
 }
 
-/* Custom Cursor */
-#cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    pointer-events: none;
-    z-index: 9999;
-    will-change: transform;
-    filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 15px var(--accent));
-}
 
-#cursor::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--accent);
-    clip-path: polygon(50% 0%, 0% 100%, 50% 70%, 100% 100%);
-}
-
-/* Hide default cursor everywhere to prevent double cursors on desktop */
-@media (hover: hover) and (pointer: fine) {
-    *, *::before, *::after {
-        cursor: none !important;
-    }
-}
-
-@media (hover: none), (pointer: coarse) {
-    #cursor {
-        display: none !important;
-    }
-}
 
 /* Glassmorphism */
 .glass {
@@ -130,6 +95,19 @@ body {
     animation-play-state: paused;
 }
 
+@keyframes wobble-vibrate {
+    0%, 100% { transform: translateX(0) rotate(0); }
+    15% { transform: translateX(-4px) rotate(-2deg); }
+    30% { transform: translateX(3px) rotate(2deg); }
+    45% { transform: translateX(-3px) rotate(-1deg); }
+    60% { transform: translateX(2px) rotate(1deg); }
+    75% { transform: translateX(-1px) rotate(-0.5deg); }
+}
+
+.animate-wobble {
+    animation: wobble-vibrate 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
 /* Utilities */
 .text-accent { color: var(--accent); }
 .bg-accent { background-color: var(--accent); }
@@ -186,14 +164,24 @@ body {
 
 /* Global Button Interactions */
 .btn-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-hover:hover {
-    transform: translateY(-3px) scale(1.02);
-    filter: brightness(1.1);
+    transform: translateY(-4px) scale(1.03);
+    filter: brightness(1.15);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 .btn-hover:active {
-    transform: translateY(0) scale(0.96);
+    transform: translateY(-1px) scale(0.98);
+}
+
+.shadow-accent-strong {
+    box-shadow: 0 0 25px rgba(0, 219, 197, 0.3);
+}
+
+.btn-hover.bg-accent:hover {
+    box-shadow: 0 0 40px rgba(0, 219, 197, 0.5);
+    background-color: #00f0d8;
 }
 
 /* Back Home Button */
