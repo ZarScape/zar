@@ -79,7 +79,7 @@ const Store = () => {
 
       <main className="container mx-auto px-6 transition-all duration-500">
         <div className="mb-12">
-            <BackHomeBtn />
+          <BackHomeBtn />
         </div>
 
         <header className="text-center mb-12">
@@ -95,50 +95,48 @@ const Store = () => {
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {packages.map((pkg) => (
             <div key={pkg.tier} onClick={handleCardClick} className="cursor-pointer group">
-              <GlowCard 
+              <GlowCard
                 glowColor={pkg.color}
                 customSize={true}
-                className={`h-full flex flex-col gap-4 border-white/5 hover:border-accent/30 transition-all ${
-                  pkg.featured ? 'border-accent/40 bg-accent/5 glow-primary' : ''
-                }`}
+                className={`h-full flex flex-col gap-4 border-white/5 hover:border-accent/30 transition-all ${pkg.featured ? 'border-accent/40 bg-accent/5 glow-primary' : ''
+                  }`}
               >
                 <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 mb-2">
                   <img src={pkg.img} alt={pkg.tier} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
-                
+
                 <div className="flex justify-between items-center">
                   <h3 className={`text-2xl font-black ${pkg.isLifetime ? 'text-accent' : 'text-white'}`}>{pkg.tier}</h3>
-                  <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border transition-all ${
-                    pkg.isLifetime 
-                      ? 'bg-accent text-black border-accent shadow-[0_0_15px_rgba(0,219,197,0.5)]' 
+                  <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border transition-all ${pkg.isLifetime
+                      ? 'bg-accent text-black border-accent shadow-[0_0_15px_rgba(0,219,197,0.5)]'
                       : 'bg-white/5 border-white/10 text-gray-400'
-                  }`}>
+                    }`}>
                     {pkg.badge}
                   </span>
                 </div>
-                
+
                 <div>
                   <p className={`font-bold text-sm mb-1 ${pkg.isLifetime ? 'text-accent/60' : 'text-gray-500'}`}>
                     {pkg.isLifetime ? 'One-time Payment' : (billingCycle === 'monthly' ? '1 Month' : '1 Year')}
                   </p>
                   <div className="flex items-end gap-2">
                     <p className={`text-4xl font-black transition-all ${pkg.isLifetime ? 'text-accent drop-shadow-[0_0_10px_rgba(0,219,197,0.3)] scale-110 origin-left' : 'text-white'}`}>
-                        {billingCycle === 'monthly' ? pkg.monthlyPrice : pkg.yearlyPrice}
+                      {billingCycle === 'monthly' ? pkg.monthlyPrice : pkg.yearlyPrice}
                     </p>
                     {!pkg.isLifetime && (
-                        <span className="text-gray-500 font-bold mb-1">/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
+                      <span className="text-gray-500 font-bold mb-1">/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
                     )}
                   </div>
                 </div>
-                
+
                 <p className="text-gray-400 text-sm leading-relaxed flex-grow">{pkg.value}</p>
-                
+
                 <div className="pt-4 mt-auto border-t border-white/5 flex flex-col gap-4">
                   <p className="text-xs font-bold text-accent uppercase tracking-widest">
                     {billingCycle === 'yearly' ? pkg.savings : (pkg.isLifetime ? 'Ultimate Value' : 'Standard Rate')}
                   </p>
                   <button className="w-full py-4 rounded-xl bg-accent text-black font-black uppercase tracking-widest text-sm shadow-accent btn-hover">
-                      Purchase Plan
+                    Purchase Plan
                   </button>
                 </div>
               </GlowCard>
@@ -153,7 +151,7 @@ const Store = () => {
               <p className="text-gray-300 text-lg leading-relaxed mb-10">
                 Payments are temporarily unavailable. They will return in the next major zar update. Thank you for your patience and support.
               </p>
-              <button 
+              <button
                 onClick={() => setShowPaymentNotice(false)}
                 className="px-12 py-5 rounded-2xl bg-accent text-black font-black uppercase tracking-widest btn-hover"
               >
@@ -164,17 +162,16 @@ const Store = () => {
         )}
       </main>
       {/* Support Server Notification */}
-      <div className={`fixed bottom-6 left-6 right-6 md:left-auto md:bottom-8 md:right-8 z-[120] transition-all duration-500 transform ${
-        showNotification ? 'translate-y-0 opacity-100 animate-wobble' : 'translate-y-12 opacity-0 pointer-events-none'
-      }`}>
+      <div className={`fixed bottom-6 left-6 right-6 md:left-auto md:bottom-8 md:right-8 z-[120] transition-all duration-500 transform ${showNotification ? 'translate-y-0 opacity-100 animate-wobble' : 'translate-y-12 opacity-0 pointer-events-none'
+        }`}>
         <div className="glass p-5 pr-12 rounded-2xl border-accent/20 shadow-2xl shadow-black/50 max-w-sm mx-auto md:mx-0 relative group !backdrop-blur-[32px]">
-          <button 
+          <button
             onClick={() => setShowNotification(false)}
             className="absolute top-3 right-3 text-gray-500 hover:text-white transition-colors"
           >
             <X size={16} />
           </button>
-          
+
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
               <Bell className="text-accent" size={20} />
@@ -184,9 +181,9 @@ const Store = () => {
               <p className="text-gray-400 text-xs leading-relaxed">
                 Join our support server for <span className="text-accent font-bold">better discount codes</span> and exclusive community rewards.
               </p>
-              <a 
-                href="https://discord.gg/zarscape" 
-                target="_blank" 
+              <a
+                href="https://discord.gg/6YVmxA4Qsf"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-3 text-[10px] font-black uppercase tracking-widest text-accent hover:underline"
               >
