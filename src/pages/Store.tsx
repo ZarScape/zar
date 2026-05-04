@@ -9,30 +9,36 @@ const packages = [
   {
     tier: 'Bronze',
     badge: 'Entry',
-    monthlyPrice: '$3.99',
-    yearlyPrice: '$25.97',
+    monthlyPrice: '$2.99',
+    originalMonthlyPrice: '$4.99',
+    yearlyPrice: '$21.52',
+    originalYearlyPrice: '$35.88',
     value: 'Quick Start: A simple plan to get started fast with essential elite features.',
-    savings: 'SAVE $21/year',
+    savings: 'SAVE $14.36/year',
     img: 'https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/bronze.png',
     color: 'theme' as const,
   },
   {
     tier: 'Silver',
     badge: 'Popular',
-    monthlyPrice: '$8.99',
-    yearlyPrice: '$54.97',
+    monthlyPrice: '$5.94',
+    originalMonthlyPrice: '$8.99',
+    yearlyPrice: '$35.64',
+    originalYearlyPrice: '$71.28',
     value: 'Steady Growth: Great for growing communities that want better long-term performance.',
-    savings: 'SAVE $52/year',
+    savings: 'SAVE $35.64/year',
     img: 'https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/silver.png',
     color: 'theme' as const,
   },
   {
     tier: 'Gold',
     badge: 'Best Value',
-    monthlyPrice: '$12.99',
-    yearlyPrice: '$64.97',
+    monthlyPrice: '$8.92',
+    originalMonthlyPrice: '$12.99',
+    yearlyPrice: '$42.82',
+    originalYearlyPrice: '$107.04',
     value: 'Maximum Power: Complete access to all advanced modules and community scaling tools.',
-    savings: 'SAVE $90/year',
+    savings: 'SAVE $64.22/year',
     img: 'https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zar/gold.png',
     color: 'theme' as const,
   },
@@ -40,7 +46,9 @@ const packages = [
     tier: 'Diamond',
     badge: 'Lifetime',
     monthlyPrice: '$49.97',
+    originalMonthlyPrice: '$99.99',
     yearlyPrice: '$49.97',
+    originalYearlyPrice: '$99.99',
     isLifetime: true,
     featured: true,
     value: 'Everything in Gold but permanent. One-time payment for maximum convenience.',
@@ -119,6 +127,12 @@ const Store = () => {
                   <p className={`font-bold text-sm mb-1 ${pkg.isLifetime ? 'text-accent/60' : 'text-gray-500'}`}>
                     {pkg.isLifetime ? 'One-time Payment' : (billingCycle === 'monthly' ? '1 Month' : '1 Year')}
                   </p>
+                  
+                  {/* Strikethrough Price */}
+                  <div className="text-gray-500 text-xl line-through font-bold mb-1">
+                    {billingCycle === 'monthly' ? pkg.originalMonthlyPrice : pkg.originalYearlyPrice}
+                  </div>
+
                   <div className="flex items-end gap-2">
                     <p className={`text-4xl font-black transition-all ${pkg.isLifetime ? 'text-accent drop-shadow-[0_0_10px_rgba(0,219,197,0.3)] scale-110 origin-left' : 'text-white'}`}>
                       {billingCycle === 'monthly' ? pkg.monthlyPrice : pkg.yearlyPrice}
@@ -132,8 +146,8 @@ const Store = () => {
                 <p className="text-gray-400 text-sm leading-relaxed flex-grow">{pkg.value}</p>
 
                 <div className="pt-4 mt-auto border-t border-white/5 flex flex-col gap-4">
-                  <p className="text-xs font-bold text-accent uppercase tracking-widest">
-                    {billingCycle === 'yearly' ? pkg.savings : (pkg.isLifetime ? 'Ultimate Value' : 'Standard Rate')}
+                  <p className="text-sm font-bold text-accent uppercase tracking-widest transition-all duration-300 scale-105 origin-left">
+                    {billingCycle === 'yearly' ? pkg.savings : (pkg.isLifetime ? 'Ultimate Value' : pkg.badge)}
                   </p>
                   <button className="w-full py-4 rounded-xl bg-accent text-black font-black uppercase tracking-widest text-sm shadow-accent btn-hover">
                     Purchase Plan
