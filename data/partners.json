@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Lyxious",
+    "handle": "@xougui",
+    "img": "https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zarPartners/Lyxios.webp",
+    "tags": ["Multipurpose"],
+    "inviteUrl": "https://discord.com/oauth2/authorize?client_id=1335228717403996160",
+    "supportUrl": "https://discord.gg/RZHrtzwUC9",
+    "websiteUrl": "https://lyxios.xouxou-hosting.fr/",
+    "about": "Lyxious is your best 100% free multifunction companion, packed with advanced tools to elevate your Discord community seamlessly."
+  },
+  {
+    "name": "LazaBot",
+    "handle": "@a1kene",
+    "img": "https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zarPartners/LazaBot.png",
+    "tags": ["Multipurpose"],
+    "inviteUrl": "https://discord.com/oauth2/authorize?client_id=938803094291116082",
+    "supportUrl": "https://discord.gg/pZbC5zJSCN",
+    "websiteUrl": null,
+    "about": "LazaBot is Designed to assist Discord servers around the globe, ensuring a seamless moderation experience for diverse communities."
+  },
+  {
+    "name": "Drayv",
+    "handle": "@introvertirls",
+    "img": "https://raw.githubusercontent.com/ZarScape/ZarScape/refs/heads/main/images/zarPartners/Drayv.gif",
+    "tags": ["Multipurpose"],
+    "inviteUrl": "https://discord.com/oauth2/authorize?client_id=1281896325490933880&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FBqXCqRqkFh&integration_type=0&scope=applications.commands+bot",
+    "supportUrl": "https://discord.gg/BqXCqRqkFh",
+    "websiteUrl": "https://drayv-nexcoder.pages.dev/",
+    "about": "Drayv is the ultimate all-in-one bot, offering advanced moderation, security, logs, music, and fun features to easily manage your server."
+  }
+]
