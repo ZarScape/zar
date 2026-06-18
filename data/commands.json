@@ -1,0 +1,109 @@
+[
+  {
+    "module": "Info",
+    "commands": [
+      {
+        "name": "credits",
+        "description": "Displays the credits and partners of zar"
+      },
+      {
+        "name": "help",
+        "description": "Displays help menu of zar"
+      },
+      {
+        "name": "ping",
+        "description": "Pong"
+      }
+    ]
+  },
+  {
+    "module": "Premium",
+    "commands": [
+      {
+        "name": "premium",
+        "description": "Manage your Zar Premium subscription",
+        "subcommands": [
+          { "name": "help", "description": "Show premium benefits and help" },
+          { "name": "buy", "description": "Get links to buy premium" },
+          { 
+            "name": "redeem", 
+            "description": "Redeem a premium plan from your inventory",
+            "options": [{ "name": "plan", "description": "Select a premium plan from your inventory to redeem", "required": true }]
+          },
+          { "name": "profile", "description": "Show your active premium status and inventory" },
+          { "name": "status", "description": "Check the premium status of this server" },
+          { 
+            "name": "transfer", 
+            "description": "Transfer premium from another server to this one",
+            "options": [{ "name": "from_guild", "description": "Select a server to transfer from", "required": true }]
+          },
+          { "name": "deactivate", "description": "Deactivate premium from this server and return the plan to your inventory" }
+        ]
+      }
+    ]
+  },
+  {
+    "module": "PVC",
+    "commands": [
+      {
+        "name": "pvc",
+        "description": "Manage the temporary voice channel (PVC) system",
+        "subcommands": [
+          { "name": "info", "description": "View your server's PVC generators and limits" },
+          { "name": "setup", "description": "Set up the private voice channel system" },
+          { "name": "remove", "description": "Remove the private voice channel system" },
+          { "name": "generators", "description": "Set up Duo/Trio/Squad premium voice generators" }
+        ]
+      }
+    ]
+  },
+  {
+    "module": "Reminder",
+    "commands": [
+      {
+        "name": "reminder",
+        "description": "Manage your reminders",
+        "subcommands": [
+          { 
+            "name": "add", 
+            "description": "Add a new reminder",
+            "options": [
+              { "name": "duration", "description": "Duration (10m, 2h, 1d)", "required": true },
+              { "name": "note", "description": "Optional note", "required": false }
+            ]
+          },
+          { "name": "list", "description": "List your active reminders" },
+          { 
+            "name": "remove", 
+            "description": "Remove a reminder by ID",
+            "options": [{ "name": "id", "description": "Reminder ID", "required": true }]
+          },
+          { "name": "clear", "description": "Clear all your reminders" },
+          { 
+            "name": "edit", 
+            "description": "Edit a reminder",
+            "options": [
+              { "name": "id", "description": "Reminder ID", "required": true },
+              { "name": "duration", "description": "New duration (optional)", "required": false },
+              { "name": "note", "description": "New note (optional)", "required": false }
+            ]
+          },
+          { 
+            "name": "snooze", 
+            "description": "Snooze a reminder",
+            "options": [
+              { "name": "id", "description": "Reminder ID", "required": true },
+              { "name": "duration", "description": "Snooze duration", "required": true }
+            ]
+          },
+          { 
+            "name": "info", 
+            "description": "Get info about a reminder",
+            "options": [{ "name": "id", "description": "Reminder ID", "required": true }]
+          },
+          { "name": "upcoming", "description": "Show next few reminders" }
+        ]
+      }
+    ]
+  }
+]
